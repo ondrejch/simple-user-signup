@@ -1,0 +1,23 @@
+Simple site registration script bundle
+======================================'
+
+* Overview 
+
+There are 3 scripts which work together: 
+register.pl - displays registration form, register accounts for creation and sends out email
+confirm.pl  - if the user clicks on the emailed link, calls the next script
+ua.pl       - actually creates the account
+
+
+* Installation instructions:
+
+1) Change strings in all scripts to match your local needs.
+2) Move all scripts to /usr/lib/cgi-bin directory, chown www-data & chmod 700 all of them
+3) mkdir /var/cache/register/; chmod www-data: /var/cache/register/
+4) Add the folowing line to /etc/sudoers to make it work:
+www-data ALL=NOPASSWD:/usr/lib/cgi-bin/ua.pl
+
+
+* Disclaimer
+
+No warranty of any kind is assumed nor provided. If the scipts fry your box and kill your dog it is your own fault.
